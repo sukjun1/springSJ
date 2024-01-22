@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<th:block
+	th:replace="~{/layout/readLayout::setContent(~{this::content})}">
+	<th:block th:fragment="content">
+		<h1>판매 등록</h1>
+		<form th:action="@{/deal/register}" th:method="post">
+			<div>
+				<label>제목</label><input type="text" name="title">
+			</div>
+			<div>
+				<label>판매자</label><input type="text" name="seller">
+			</div>
+			<div>
+				<label>내용</label><textarea name="content"></textarea>
+			</div>
+			<div>
+				<label>판매 가격</label><input type="text" name="price">
+			</div>
+			<div>
+				<label>거래 지역</label><input type="text" name="address">
+			</div>
+			<button type="submit">판매 등록</button>
+		</form>
+	</th:block>
+</th:block>

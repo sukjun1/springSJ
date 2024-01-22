@@ -186,12 +186,16 @@ ol,
 ul {
   padding-left: 2rem;
 }
-
+li{
+	display: inline-block;
+	margin:10px;
+}
 ol,
 ul,
 dl {
   margin-top: 0;
   margin-bottom: 1rem;
+  list-style: none;
 }
 
 ol ol,
@@ -245,11 +249,11 @@ sup {
 }
 
 a {
-  color: var(--bs-link-color);
-  text-decoration: underline;
+  color: inherit;
+  text-decoration: none;
 }
 a:hover {
-  color: var(--bs-link-hover-color);
+  color:inherit;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
