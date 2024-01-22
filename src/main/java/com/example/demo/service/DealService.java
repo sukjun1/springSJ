@@ -13,9 +13,7 @@ public interface DealService {
 
 	DealDTO read(int no);
 
-	void modify(DealDTO dto);
-
-	int remove(int no);
+	
 
 	default Deal dtoToEntity(DealDTO dto) {
 		Deal entity = Deal.builder().no(dto.getNo()).price(dto.getPrice()).title(dto.getTitle())
@@ -29,4 +27,7 @@ public interface DealService {
 				.address(entity.getAddress()).regDate(entity.getRegDate()).modDate(entity.getModDate()).build();
 		return dto;
 	}
+	void modify(DealDTO dto);
+
+	int remove(int no);
 }

@@ -3,6 +3,10 @@
 	th:replace="~{/layout/readLayout::setContent(~{this::content})}">
 	<th:block th:fragment="content">
 	<form th:action="@{/deal/modify}" th:method="post">
+			<div class="form-group">
+				<label>번호</label> <input type="text" class="form-control" name="no"
+					th:value="${dto.no}" readonly>
+			</div>
 			<div>
 				<label>제목</label><input type="text" name="title" th:value="${dto.title}">
 			</div>
@@ -18,8 +22,20 @@
 			<div>
 				<label>거래 지역</label><input type="text" name="address" th:value="${dto.address}">
 			</div>
-			<button type="submit">수정</button>
-			<button type="submit">삭제</button>
+			<button type="submit" class="modifyBtn">수정</button>
+			<button type="submit" class="removeBtn">삭제</button>
 		</form>
+		<script th:inline="javascript">
+			var form = $("form");
+			$(".modifyBtn").click(function(){
+				if(!confirm("수정하시겠습니까?")){
+					return;
+				}
+				form.attr("action","/deal/modify").attr("method","post").submit();
+			});
+			$(".removeBtn").click(function(){
+				form.attr("action","/deal/remove").attr("method","post").submit();
+			});
+		</script>
 	</th:block>
 </th:block>

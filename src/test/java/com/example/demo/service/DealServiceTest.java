@@ -30,7 +30,7 @@ public class DealServiceTest {
 	}
 	@Test
 	public void 수정() {
-		DealDTO dto = service.read(3);
+		DealDTO dto = service.read(1);
 		dto.setContent("aa");
 		dto.setTitle("bb");
 		dto.setPrice(2000);

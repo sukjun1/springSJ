@@ -15,7 +15,7 @@ import com.example.demo.repository.DealRepository;
 @Service
 public class DealServiceImpl implements DealService{
 	@Autowired
-	DealRepository repository;
+	private DealRepository repository;
 
 	@Override
 	public int register(DealDTO dto) {
@@ -36,9 +36,13 @@ public class DealServiceImpl implements DealService{
 	@Override
 	public DealDTO read(int no) {
 		Optional<Deal> optional = repository.findById(no);
+		if(optional.isPresent()) {
 		Deal deal = optional.get();
 		DealDTO dto = entityToDto(deal);
 		return dto;
+		}else {
+			return null;
+		}
 	}
 
 	@Override
@@ -50,6 +54,7 @@ public class DealServiceImpl implements DealService{
 		deal.setPrice(dto.getPrice());
 		deal.setAddress(dto.getAddress());
 		repository.save(deal);
+		
 	}
 
 	@Override
