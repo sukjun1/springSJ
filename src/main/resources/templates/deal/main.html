@@ -8,6 +8,7 @@
 				<li th:each="dto:${list}">
 				<a th:href="@{/deal/read(no=${dto.no})}">
 				<div class="col mb-5">
+				<img th:src="${dto.link}" alt=".."/>
 					<div class="card h-100">
 						<img class="card-img-top"
 							src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
@@ -15,8 +16,8 @@
 							<div class="text-center">
 								<h5 class="fw-bolder">[[${dto.title}]]</h5>
 							</div>
-							<div>가격 : [[${dto.price}]]</div>
-							<div>등록일 : [[${#temporals.format(dto.regDate,'yyyy/MM/dd')}]]</div>
+							<div>가격 : [[${dto.price}]]원</div>
+							<div>거래지역 : [[${dto.address}]]</div>
 						</div>
 					</div>
 				</div>
