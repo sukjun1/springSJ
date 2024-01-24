@@ -2,13 +2,9 @@ package com.example.demo.service;
 
 import java.util.List;
 
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
-import org.springframework.data.domain.Page;
-
 import com.example.demo.dto.DealDTO;
 import com.example.demo.entity.Deal;
 
-import jakarta.transaction.Transactional;
 
 public interface DealService {
 	// 게시물 등록
