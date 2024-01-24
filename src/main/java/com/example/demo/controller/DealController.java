@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.dto.DealDTO;
+import com.example.demo.entity.Deal;
 import com.example.demo.service.DealService;
 
 
@@ -27,6 +28,7 @@ public class DealController {
 		List<DealDTO> list = service.getList();
 		model.addAttribute("list", list);
 	}
+	
 	@GetMapping("/register")
 	public void register() {
 		

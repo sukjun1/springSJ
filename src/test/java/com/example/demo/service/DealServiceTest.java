@@ -15,8 +15,7 @@ public class DealServiceTest {
 	
 	@Test
 	public void 등록() {
-		DealDTO dto = DealDTO.builder().title("aa").content("bb").price(10).seller("cc").address("dd")
-				.link("/img/shoes.jpg/").build();
+		DealDTO dto = DealDTO.builder().title("aa").content("bb").price(10).seller("cc").address("dd").build();
 		service.register(dto);
 	}
 	@Test

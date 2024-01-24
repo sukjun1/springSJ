@@ -24,5 +24,4 @@ public class DealDTO {
 	String address;
 	LocalDateTime regDate;
 	LocalDateTime modDate;
-	String link;
 }
