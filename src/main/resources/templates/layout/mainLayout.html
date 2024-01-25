@@ -37,9 +37,13 @@
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 
 					</ul>
+					
 					<div class="col">
-					<input class="form-control form-control-lg"
+					
+					<form th:action="@{/deal/mainSearch}" th:method="get" role="search">
+					<input class="form-control form-control-lg" name="title"
 						type="text"  style="width:510px;height:40px;font-size:20px;" placeholder="상품명을 검색하세요!"/>
+						</form>
 				</div>
 					<a th:href="@{/deal/register}">
 						<button class="btn" type="submit">

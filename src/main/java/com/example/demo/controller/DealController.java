@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.dto.DealDTO;
+import com.example.demo.entity.Deal;
 import com.example.demo.service.DealService;
 
 
@@ -58,5 +59,11 @@ public class DealController {
 	public String removePost(@RequestParam(name="no")int no) {
 		service.remove(no);
 		return "redirect:/deal/main";
+	}
+	@GetMapping("/mainSearch")
+	public void mainSearch(@RequestParam(name="title")String title,Model model) {
+		List<Deal> searchList = service.search(title);
+		model.addAttribute("searchList", searchList);
+		
 	}
 }

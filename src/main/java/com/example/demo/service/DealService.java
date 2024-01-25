@@ -32,4 +32,5 @@ public interface DealService {
 
 	int remove(int no);
 	
+	public List<Deal> search(String title);
 }

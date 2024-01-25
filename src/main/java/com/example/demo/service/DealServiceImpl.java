@@ -68,4 +68,10 @@ public class DealServiceImpl implements DealService{
 		}
 	}
 
+	@Override
+	public List<Deal> search(String title) {
+		List<Deal> list = repository.findByTitleContaining(title);
+		return list;
+	}
+
 }
