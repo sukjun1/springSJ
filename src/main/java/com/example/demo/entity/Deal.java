@@ -36,6 +36,6 @@ public class Deal extends BaseEntity{
 	String seller;
 	@Column(length = 100, nullable = false)
 	String address;
-	@Column(length = 300, nullable = false)
+	@Column(length = 300, nullable = true)
 	String img;
 }
