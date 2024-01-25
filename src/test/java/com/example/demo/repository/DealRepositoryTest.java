@@ -35,12 +35,9 @@ public class DealRepositoryTest {
 	}
 	@Test
 	public void 수정() {
-		Optional<Deal> optional = repository.findById(1);
+		Optional<Deal> optional = repository.findById(7);
 		Deal deal = optional.get();
-		deal.setAddress("aa");
-		deal.setContent("bb");
-		deal.setPrice(20000);
-		deal.setTitle("cc");
+		deal.setImg("/images/스톤2.jfif");
 		repository.save(deal);
 	}
 	@Test

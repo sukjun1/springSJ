@@ -18,14 +18,14 @@ public interface DealService {
 
 	default Deal dtoToEntity(DealDTO dto) {
 		Deal entity = Deal.builder().no(dto.getNo()).price(dto.getPrice()).title(dto.getTitle())
-				.content(dto.getContent()).seller(dto.getSeller()).address(dto.getAddress()).build();
+				.content(dto.getContent()).seller(dto.getSeller()).address(dto.getAddress()).img(dto.getImg()).build();
 		return entity;
 	}
 	
 	default DealDTO entityToDto(Deal entity) {
 		DealDTO dto = DealDTO.builder().no(entity.getNo()).title(entity.getTitle())
 				.content(entity.getContent()).price(entity.getPrice()).seller(entity.getSeller())
-				.address(entity.getAddress()).regDate(entity.getRegDate()).modDate(entity.getModDate()).build();
+				.address(entity.getAddress()).regDate(entity.getRegDate()).modDate(entity.getModDate()).img(entity.getImg()).build();
 		return dto;
 	}
 	void modify(DealDTO dto);
