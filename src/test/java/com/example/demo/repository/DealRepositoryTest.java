@@ -35,9 +35,9 @@ public class DealRepositoryTest {
 	}
 	@Test
 	public void 수정() {
-		Optional<Deal> optional = repository.findById(7);
+		Optional<Deal> optional = repository.findById(3);
 		Deal deal = optional.get();
-		deal.setImg("/images/스톤2.jfif");
+		deal.setImg("/images/딥디크.jfif");
 		repository.save(deal);
 	}
 	@Test
