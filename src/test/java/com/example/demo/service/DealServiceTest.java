@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.demo.dto.DealDTO;
+import com.example.demo.entity.Deal;
 
 @SpringBootTest
 public class DealServiceTest {
@@ -40,5 +41,10 @@ public class DealServiceTest {
 	@Test
 	public void 삭제() {
 		service.remove(3);
+	}
+	@Test
+	public void 검색() {
+		List<Deal> list =  service.search("딥");
+		System.out.println(list);
 	}
 }
